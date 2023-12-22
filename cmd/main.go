@@ -8,11 +8,9 @@ import (
 func main() {
 
 	database.ConnectDb()
-    app := fiber.New()
+	app := fiber.New()
 
-    app.Get("/", func(c *fiber.Ctx) error {
-        return c.SendString("Hello, From Instagram automator")
-    })
+	setupRoutes(app)
 
-    app.Listen(":3000")
+	app.Listen(":3000")
 }
