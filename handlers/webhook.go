@@ -14,7 +14,6 @@ type TwilioParams struct {
 }
 
 func Webhook(c *fiber.Ctx) error {
-	// Your Auth Token from twilio.com/console
 	//authToken := os.Getenv("TWILLIO_TOKEN")
 
 	// Initialize the request validator
