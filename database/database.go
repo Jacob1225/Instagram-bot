@@ -4,16 +4,15 @@ import (
 	"fmt"
 	"log"
 	"os"
+
 	"github.com/jacob1225/instagram-bot/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
 
-
-type Dbinstance struct {	
+type Dbinstance struct {
 	Db *gorm.DB
-
 }
 
 var DB Dbinstance
@@ -25,7 +24,6 @@ func ConnectDb() {
 		os.Getenv("DB_NAME"),
 	)
 
-	fmt.Println("dsn " + dsn)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})

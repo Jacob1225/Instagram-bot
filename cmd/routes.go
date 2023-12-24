@@ -12,4 +12,6 @@ func setupRoutes(app *fiber.App) {
 
 	app.Post("user", handlers.CreateUser)
 
+	app.Post("/sms", handlers.Webhook)
+
 }
